@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트에 형제 엘리먼트로 추가하기</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// 앞에 붙이기(형으로 붙이기)
+// before : 앞에
+// insert : 삽입하다.
+$(function() {
+	var div = "<div>좋아하는 과일: 사과</div>";
+	$("footer").before(div);
+	
+	var div2 = "<div>싫어하는 과일: 두리안</div>";
+	$(div2).insertBefore($("footer"));
+});
+</script>
+</head>
+<body>  
+ <header> <h1> 과일 </h1></header>
+
+ <footer> <h3> <i> copyright syj </i> </h3> </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 보이게 하기</title>
+<style>
+span {
+	display: none
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// show : 보이다
+// 동작하는 시간 지정 : 밀리세컨드 (1/1000초), "slow, normal, fast"
+// slow : 느린
+// normal : 보통
+// fast : 빠른
+$(function() {
+	// Show It 버튼
+	//  eq(equal-같다), eq(1) - 인덱스가 1과 같은
+	$("button:eq(0)").click(function() {
+// 		$("span:first").show();	// 즉시 보이기
+// 		$("span:first").show(2000);	// 보이는 동작을 2초에 걸쳐서 실행
+// 		$("span:first").show("slow");	// 보이는 동작을 느리게
+// 		$("span:first").show("normal");	// 보이는 동작을 일반적인
+		$("span:first").show("fast");	// 보이는 동작을 빠르게
+	});
+	
+	// Show It slow 버튼
+	$("button:eq(1)").click(function() {
+		// 콜백함수(function) - 애니메이션이 끝나면 실행될 함수
+		$("span:last").show(3000, function() {
+			// 3초뒤에 배경색을 노란색으로
+			$(this).css("background-color", "yellow");
+		});
+	});
+});
+
+</script>
+</head>
+<body>
+	<button>Show It</button>
+	<span>안녕하세요.</span>
+	<br>
+	<button>Show It slow</button>
+	<span>반갑습니다.</span>
+</body>
+</html>

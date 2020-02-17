@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫 번째와 마지막 자식 엘리먼트에 스타일 적용하기 :first-child, :last-child</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//대상 중에서 첫번째
+// child : 자식
+// first-child	: 장남 -> 대상 중에서 자기가 첫번째 자식인
+// last-child	: 막내 -> 대상 중에서 자기가 마지막 자식인
+$(function() {
+// 	console.log($("div > span:first"));	// one
+// 	console.log($("div > span:first-child"));	// one, five
+	$("div > span:first-child, div > span:last-child")
+		.css("text-decoration", "underline")
+		.css("color", "red")
+		.css("font-size", "20px");	// one, four, five, eight
+	
+});
+</script> 
+</head> 
+<body> 
+  <div> 
+    <span>one,</span> 
+    <span>two,</span> 
+    <span>three,</span>
+    <span>four</span>
+  </div> 
+  <div>      
+    <span>five,</span> 
+    <span>six,</span> 
+    <span>seven,</span>
+    <span>eight</span>
+  </div>  
+</body> 
+</html>

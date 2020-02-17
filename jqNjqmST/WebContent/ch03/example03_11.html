@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>폼 엘리먼트에서 value 어트리뷰트 값 가져오고, 설정하기-val()</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+// val 		- value
+// val() 	- get
+// val(값) 	- set
+// 사용자가 입력하는 태그, input, textarea
+$(function() {
+	$("button").click(function() {
+		var v = $("input[type=text]").val();	// get
+		$("#console").text(v);
+	});
+	// 텍스트 상자에 글자 입력하면 div에 출력 되도록
+	// 이벤트 : keyup(키보드로 눌렀다가 떼어냈을 때)
+	
+});
+</script>
+</head>
+<body>
+<button>reset</button>
+<input type="text" value="val 메소드 연습 중" size="80">
+<div id="console"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포커스를 받으면 글씨 지우고 포커스를 잃으면 글씨 나타내기</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+// focus : 초점
+// blur : 흐려짐(포커스를 얻었다가 잃는)
+$(function() {
+	myfunc($("input:first"));
+	
+	$("input").bind({
+		"focus" : function() {
+			$(this).css("background-color", "pink");
+		},
+		"blur" : function() {
+			myfunc($(this));
+		}
+	});
+	
+	function myfunc(obj){
+		obj.css("background-color", "yellowgreen");
+		
+	}
+});
+</script>
+</head>
+<body>
+	<input type="text" id="id" value="아이디를 입력하세요">
+	<input type="text" id="pw" value="패스워드를 입력하세요">
+</body>
+</html>

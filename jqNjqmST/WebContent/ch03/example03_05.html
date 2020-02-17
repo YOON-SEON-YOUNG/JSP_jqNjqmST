@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 클래스 명으로 스타일 입히기</title>
+<style>
+	.red       {   background: red;     }
+	.green     {   background: green;   }
+	.yellow    {   background: yellow;   }
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// 현재 클래스에 따라서 다르게 적용
+// add: 더하다
+// addClass(클래스명)
+// current : 현재의
+$(function() {
+	$("button").click(function() {
+		// index : 첨자(0, 1, 2)
+		// currentClass : 현재 가지고 있는 클래스 값
+		$("li").addClass(function(index, currentClass) {
+			if(currentClass == "red"){
+				$(this).removeClass("red");
+				return "green";
+			} else {
+				return "yellow";
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+  <button> 배경색 변경 </button>
+  <ul>
+    <li>흰 배경색
+    <li class="red"> 배경색 
+    <li>흰 배경색
+  </ul>
+  <p>그린 배경색은 없음 addClass 메소드가 성공적으로 수행하면 그린 배경색을
+      갖음. addClass 메소드가 성공적으로 수행 못하면 빨간 배경색을 갖음.</p>
+</body>
+</html>

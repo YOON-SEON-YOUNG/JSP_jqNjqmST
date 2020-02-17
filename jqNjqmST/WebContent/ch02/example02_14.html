@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>어트리뷰트를 조건(속성)으로 제시하여 엘리먼트를 찾기-E[A], E[A=V], E[A^=V], E[A$=V], E[A*=V]</title>
+<style type="text/css">
+.spotlight {   background-color: #ff0}
+.redtext {   color: #f00}
+.bluetext {   color: #00f}
+.largetext {   font-size: 30pt}
+.italictext {   font-style: italic}
+.box {   border: 3pt solid #f00}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// $("태그명[속성명=속성값]")
+// [속성명]	: 해당 속성이 존재
+// [속성명=속성값]	: 해당 속성의 값이 일치
+// [속성명^=속성값]	: 해당 속성의 값이 ~로 시작
+// [속성명$=속성값]	: 해당 속성의 값이 ~로 끝
+// [속성명*=속성값]	: 해당 속성의 값이 들어있는
+$(function() {
+	// id 속성이 존재하는 span
+	$("span[id]").addClass("spotlight");			
+	
+	// id 속성이 값(simpletext1)과 일치하는 span
+	$("span[id=simpletext1]").addClass("redtext");
+	
+	// id 속성이 값(simpletext1)과 불일치하는 span
+	$("span[id!=simpletext1]").addClass("bluetext");
+	
+	// id 속성의 값(complex)로 시작하는 span
+	$("span[id^=complex]").addClass("largetext");
+	
+	// id 속성의 값이("text1")로 끝나는 span
+	$("span[id$=text1]").addClass("italictext");
+	
+	// id 속성의 값에 ("text")가 들어있는 span
+	$("span[id*=text]").addClass("box");
+	
+	
+});
+
+
+</script>
+</head>
+<body>
+  <span id="simpletext1">simple</span>
+  <span class="simpletext2">jQuery</span>
+  <span id="complextext1">basic</span>
+  <span id="complextext2">example</span>
+  <span id="complex">book</span>
+</body>
+</html>

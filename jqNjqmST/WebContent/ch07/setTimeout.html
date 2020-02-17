@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script>
+$(function() {
+	$("#btn1").click(function() {
+		button1Clicked();
+	});
+	
+	$("#btn2").click(function() {
+		button2Clicked();
+	});
+	
+	var fTime; // undefined
+	
+	function button2Clicked() {
+		clearTimeout(fTime); // 설정된 타임아웃을 중단
+	}
+	
+	// 3초 뒤에 경고창 띄우기
+	function button1Clicked() {
+		fTime = setTimeout(function(){
+			alert("경고");
+		}, 3000); // 1/1000초
+	}
+});
+</script>
+</head>
+<body>
+<button id="btn1">클릭</button>
+<button id="btn2">clear</button>
+<script>
+
+</script>
+</body>
+</html>

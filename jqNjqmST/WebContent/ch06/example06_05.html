@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필요 없는 이벤트 제거하기 </title>
+<style type="text/css">
+img{ 
+   width: 140px; height: 120px;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+// unbind - 바인딩 해제
+// $().unbind
+$(function() {
+	// 3번 까지만 커지도록
+	// 커서도 기본(default)타입으로 설정
+	var count = 0;
+	$("img").bind("click", function() {
+		$(this).width($(this).width()*2)
+				.height($(this).height()*2)
+		count++;
+		if(count >= 3){
+			$(this).unbind();
+			$(this).css("cursor", "default");
+		} 
+	});
+});
+</script>
+</head>
+<body>   
+   <img src="../images/im18.jpg" style="cursor: pointer;">
+</body>
+</html>

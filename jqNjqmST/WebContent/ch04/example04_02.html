@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들 중에서 조건에 맞는 엘리먼트 얻기</title>
+<style>
+div {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px white solid;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// filter: 걸러내다.
+// filter(대상)
+$(function() {
+	// 전체 div(6개)에 배경색 설정하고
+	// 그 중에서 클래스가 middle인 가운데 4개를 골라서
+	// 테두리 설정
+	$("div").css("background-color", "pink")
+			.filter(".middle")
+			.css("border", "1px dashed red");
+});
+</script>
+</head>
+<body>
+	<div id="first"></div>	
+
+	<div id="second" class="middle"></div>
+	<div id="third"  class="middle"></div>
+	<div id="fourth"  class="middle"></div>
+	<div id="fifth"  class="middle"></div>
+	
+	<div id="sixth"></div> 
+</body>
+</html>

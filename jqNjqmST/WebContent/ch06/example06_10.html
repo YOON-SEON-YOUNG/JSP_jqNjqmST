@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스가 움직인 곳의 위치 알아내기</title>
+<style type="text/css">
+div{ width: 200px; height: 150px; 
+     background-color: red; cursor: pointer;
+     margin: 30px
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+// 좌표구하기 (x, y)
+// 브라우저의 document 영역 기준: clientX, clientY
+// 모니터(화면) 기준: screenX, screenY
+// move : 움직이다
+$(function() {
+	$("div").mouseover(function(e) {
+// 		console.log(e);
+		var cx = e.clientX;
+		var cy = e.clientY;
+		var sx = e.screenX;
+		var sy = e.screenY;
+		
+		$("p:first").text("(" + cx + "," + cy + ")");// (100,100)
+		$("p:eq(1)").text("(" + sx + "," + sx + ")");// (100,100)
+	});
+});
+</script>
+</head>
+<body>   
+   <div></div> 
+   <p></p>
+   <p></p>
+</body>
+</html>

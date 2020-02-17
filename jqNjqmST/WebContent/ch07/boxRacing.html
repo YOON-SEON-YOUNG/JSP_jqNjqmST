@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	width : 100px;
+	height : 100px;
+	margin : 10px;
+	font-size : 70px;
+	color : white;
+	text-align: center;
+	padding: 20px;
+}
+#red {
+	background-color : red;
+}
+
+#green {
+	background-color : green;
+}
+
+#blue {
+	background-color : blue;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function() {
+	var rank = 0;
+	var fInters = [];
+	var boxes = [$("#red"), $("#green"), $("#blue")];
+	var finish_line = 1000;
+	var interval_time = 100;
+	var min_time = 50;
+	
+	function move(box) {
+		if (l > finish_line) {
+			box.text(++rank);
+//				clearInterval(fInters[i]);
+		}
+// 		for (var i = 0; i < boxes.length; i++) {
+// 	var i = 0;
+// 			var box = boxes[i];
+			console.log(box);
+			var ml = parseInt(Math.random() * 100) + 100;
+			var t = parseInt(Math.random() * 40) + 50;
+			var l = box.offset().left + ml;
+// 			console.log("ml: " + ml);
+// 			console.log("t: " + t);
+			console.log("box.offset().left: " + box.offset().left);
+			console.log("l: " + l);
+			
+			box.animate({
+				"margin-left" : l
+			}, t, move(box));
+// 		}
+		
+		
+	}
+	
+	$("#btnStart").click(function() {
+// 		for (var i = 0; i < boxes.length; i++) {
+// 			fInters[i] = setInterval(move, 100);
+			move($("#red"));
+// 		}
+	});
+	$("#btnEnd").click(function() {
+		for (var i = 0; i < fInters.length; i++) {
+			clearInterval(fInters[i]);
+		}
+	});
+});
+
+</script>
+</head>
+<body>
+<button>Start!</button>
+<div>
+	<div id="red"	class="box"></div>
+	<div id="green" class="box"></div>
+	<div id="blue" 	class="box"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+ul { float:left; margin:30px}
+</style>
+<meta charset="UTF-8">
+<title>DOM 엘리멘트에 이벤트 적용하기</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+// bind : 묶다, 엮다.
+// .bind(이벤트, 콜백)
+// .bind("click", function(){}, .click(function(){}) )
+
+// prevent : 막다, 방지하다.
+// default : 기본값
+// attribute : 속성 - attr(속성명):get, attr(속성명, 속성값):set
+$(function() {
+	$("a").bind("click", function(e) {
+		// 이미지 링크를 브라우저에서 바로 열지않고
+		// <img>에 나타나도록
+		
+		// 브라우저 기본 기능 막기
+		e.preventDefault();
+		// 클릭된 a의 href 속성을 읽어서
+		var href = $(this).attr("href");
+		// 그 값을 img의 src 속성으로 설정
+		$("img").attr("src", href);
+// 		after($("img"));
+		
+		
+	});
+});
+</script>
+</head>
+<body>   
+   <ul>
+   <li> <a href="../images/image3.jpg"> 또또 사진 </a> </li>
+   <li> <a href="../images/image4.jpg"> 을이 사진 </a> </li>
+   </ul>
+   <img>
+</body>
+</html>

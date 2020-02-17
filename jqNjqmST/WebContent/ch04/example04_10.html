@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트 뒤에 위치하는 형제 엘리먼트 찾기</title>
+<style>
+div, span {
+   width: 60px; height: 60px;
+   margin: 5px; float: left;
+   border: 2px red solid;
+   background: white;
+   }
+.before { background: yellow} 
+.selected {border: 5px blue solid;}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// previous : 이전의
+// all		: 모든
+// prevAll() : 이전의 모든 엘리먼트(형들) 찾기
+// prevAll(selector) : 이전의 모든 엘리먼트 중에서 골라내기
+$(function() {
+	$("button").click(function() {
+		$("#sixth").prevAll().addClass("before");
+		$("#sixth").prevAll(".middle").addClass("selected");
+	});
+});
+</script>
+</head>
+<body>
+   <p> <button> 형제 엘리먼트에 스타일 입히기</button> </p>
+   
+   <div id="first">first</div>   
+   <span id="second" class="middle">
+      second
+      <div id="child">child</div>
+   </span>
+   <div id="third"  class="middle">third</div>
+   <span id="fourth"  class="middle">fourth</span>
+   <span id="fifth"  class="middle">fifth</span>   
+   <div id="sixth">sixth</div> 
+</body>
+</html>

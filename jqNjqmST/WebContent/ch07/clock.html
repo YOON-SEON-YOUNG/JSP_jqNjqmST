@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>clock.html</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script>
+$(function() {
+	function addZero(v) {
+		return (v < 10) ? "0" + v : v; 
+	}
+	function showTime() {
+		var now = new Date();
+		var hour = addZero(now.getHours());
+		var minute = addZero(now.getMinutes());
+		var second = addZero(now.getSeconds());
+		var strNow = hour + ":" + minute + ":" + second
+// 		console.log(hour);
+		$("div:eq(0)").text(strNow);
+	}
+	
+	// 클라언트 시간
+	setInterval(showTime, 1000);
+	
+	// 서버 시간
+	setInterval(function() {
+		$.get("serverTime.jsp", {}, function(rData){
+			var data = rData.trim();
+			$("div:eq(1)").text(data);
+		});
+	}, 2000);
+	
+});
+
+</script>
+</head>
+<body>
+<div style="font-size:50px">로컬</div>
+<div style="font-size:50px">서버</div>
+</body>
+</html>

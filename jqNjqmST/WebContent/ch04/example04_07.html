@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트 뒤에 위치하는 형제(바로 밑 동생) 엘리먼트 찾기</title>
+<style>
+div, span {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px red solid;
+	background: white;
+	}
+.after { background: pink } 
+.selected {border: 5px blue solid;}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// 바로 밑 동생 찾기
+// +
+// next: 다음
+// next() : 형제 관계에서 바로 다음 엘리먼트(모든)
+// next("") : ""에 맞는 엘리먼트만 골라내기
+// $("div + span")
+
+$(function() {
+	$("button").click(function() {
+		$("div").next().addClass("after");
+// 		$("div").css("color", "green").next().addClass("after");
+// 		$("div + span").addClass("after");
+		$("div").next("#fourth").addClass("selected");
+	});
+});
+
+</script>
+</head>
+<body>
+	<p> <button> 형제 엘리먼트에 스타일 입히기</button> </p>
+	
+	<div id="first">first</div>	
+
+	<span id="second" class="middle">
+		second
+		<div id="child">div</div>
+	</span>
+	<div id="third"  class="middle">third</div>
+	<span id="fourth"  class="middle">fourth</span>
+	<span id="fifth"  class="middle">fifth</span>
+	
+	<div id="sixth">sixth</div> 
+</body>
+</html>

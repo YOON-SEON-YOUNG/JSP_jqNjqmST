@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들 중 표현식을 만족하지 않는 엘리먼트 얻기</title>
+<style>
+div {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px white solid;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// not() - filter()의 반대개념
+$(function() {
+	// 전제 div(6개)에 배경색 지정
+	// 그 중에서 클래스가 middle이 아닌 2개에
+	// 테두리 설정
+	$("div").css("background-color", "pink")
+			.not(".middle")
+			.css("border", "1px dotted red");
+});	
+</script>
+</head>
+<body>
+	<div id="first"></div>	
+
+	<div id="second" class="middle"></div>
+	<div id="third"  class="middle"></div>
+	<div id="fourth"  class="middle"></div>
+	<div id="fifth"  class="middle"></div>
+	
+	<div id="sixth"></div> 
+</body>
+</html>

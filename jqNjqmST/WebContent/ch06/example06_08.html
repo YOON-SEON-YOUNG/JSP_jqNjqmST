@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>더블 클릭 이벤트</title>
+<style type="text/css">
+img{ 
+   width: 40px; height: 30px;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//dbl : double(더블)
+$(function() {
+	$("img").dblclick(function() {
+		$(this).width($(this).width() * 2)
+		  		.height($(this).height() * 2);
+	});
+});
+</script>
+</head>
+<body>   
+   <img src="../images/im18.jpg">
+</body>
+</html>

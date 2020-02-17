@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+div {
+	color: blue;
+}
+
+span {
+	color: red;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+// 배열내에 해당 원소의 인덱스
+// $.inArray(값, 배열) : 없으면 -1, 있으면 해당 인덱스
+$(function() {
+	var arr = ["four", 1, "two", 3, "four"];
+	
+	var v1 = $.inArray("one", arr);
+	$("span").eq(0).text(v1);	// -1
+	
+	var v2 = $.inArray(2, arr);
+	$("span").eq(1).text(v2);	// -1
+	
+	var v3 = $.inArray(3, arr);
+	$("span").eq(2).text(v3);	// 3
+	
+	var v4 = $.inArray("four", arr);
+	$("span").eq(3).text(v4);	// 0
+	
+	var v5 = $.inArray("four", arr, 3);
+	$("span").eq(4).text(v5);	// 4
+	
+	if(!(v1 >= 0)){
+		alert("없음");
+	}
+});
+</script>
+</head>
+<body>
+	<div>
+		"one" 검색 결과 : <span></span>
+	</div>
+	<div>
+		2 검색 결과 : <span></span>
+	</div>
+	<div>
+		3 검색 결과 : <span></span>
+	</div>
+	<div>
+		"four" 검색 결과 : <span></span>
+	</div>
+	<div>
+		"four" 검색 결과 : <span></span>
+	</div>
+</body>
+</html>

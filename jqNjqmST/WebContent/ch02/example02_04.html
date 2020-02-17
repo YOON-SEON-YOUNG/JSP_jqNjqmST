@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택된 jQuery 확장 객체 집합에서 자손 엘리먼트에 스타일시트 적용하기-“ancestor descendant”</title>
+<style type="text/css">
+   em { font-size: 12pt; line-height: 40pt}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	// em : emphasize - 강조하다
+	// 자손(자식+후손)엘리먼트는 공백으로 표현
+	
+// 	$("div em").css("border", "3pt solid #f00");// border:테두리, solid:실선
+	
+	// method chaning 방식
+	$("div em").css("border", "3pt solid #f00")
+			   .css("padding", "7px 8px 9px 10px");
+			   //				상  우  하  좌
+			   // 위쪽을 시작으로 해서 시계 방향으로 적용
+			   
+	
+});
+</script>
+</head>
+<body>
+<div>
+   <em>Hello!</em>
+   <em>jQuery</em>
+   <em>forever</em>
+</div>
+<span>
+   <em>Good Bye!</em>
+   <em>javascript</em>
+</span> 
+</body>
+</html>

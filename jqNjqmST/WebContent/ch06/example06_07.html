@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 위임하기</title>
+<style type="text/css">
+ p { background:yellow; font-weight:bold; 
+     cursor:pointer; padding:5px; } 
+</style>
+<!-- <script type="text/javascript" src="../js/jquery.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+// 음~^-^
+// $().on("이벤트명", "하위엘리먼트", f) / 새로 생성된 엘리먼트에도 적용
+$(function() {
+	// 최초 로딩시에 DOM에 올라온 엘리먼트에 대해서만 적용
+	// 새로 DOM으로 올라오는 엘리먼트에 대해서는 적용되지 않음.
+// 	$("p").click(function() {
+// 		var p2 = "<p>Click you!^-^</p>";
+// 		$(this).after(p2);
+// 	});
+	
+	// 새로 생성되는 엘리먼트에도 적용
+	$("body").on("click", "p", function() {
+		var p2 = "<p>Click you!^-^</p>";
+		$(this).after(p2);	// 형제 엘리먼트(동생)로 추가
+	});
+});
+</script>
+</head>
+<body>
+	 <p>Click me!</p> 
+</body>
+</html>

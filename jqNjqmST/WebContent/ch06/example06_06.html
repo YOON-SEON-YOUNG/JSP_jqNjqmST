@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클릭할 때마다 서로 다른 동작함수 호출하기</title>
+<style type="text/css">
+img{ 
+   width: 200px; height: 250px;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+// toggle - 두가지 상태를 번갈아..
+// $().toggle()
+// opacity : 불투명도, 0 : 투명, 1 : 불투명
+$(function() {
+	$("img").toggle(
+			function() {
+				$(this).css("opacity", 0.5);
+			},
+			function() {
+				$(this).css("opacity", 1);
+			}
+	);
+});
+</script>
+</head>
+<body>
+	<img src="../images/e.jpg" style="opacity: 0.5">
+</body>
+</html>

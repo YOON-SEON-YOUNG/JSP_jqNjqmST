@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 스크립트의 객체</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// JSON (Java Script Object Notation)
+// [ { }, { }, { } ]
+// 객체 - 속성(데이터, 필드), 기능(함수, 메서드)
+// 선영 - 객체명
+// 나이 - 28
+// 키 - 166
+// 잠자기()
+// 식사()
+var computer = {
+	"cpu"	: "i7",
+	"ram"	: "8G",
+	"hdd"	: "512GB"
+};
+
+var seon_young = {
+		"age" 	 : 28,
+		"height" : 166,
+		"com"	 : computer,
+		sleep	 : function sleep() {
+					console.log("잠자용");
+					},
+		eat 	 : function eat() {
+					console.log("밥 먹어용");
+					}
+};
+
+
+console.log(seon_young.age);
+console.log(seon_young.height);
+// console.log(seon_young.com);
+console.log(seon_young.com.cpu);
+console.log(seon_young.com.ram);
+console.log(seon_young.com.hdd);
+seon_young.sleep();
+seon_young.eat();
+</script>
+</head>
+<body>
+</body>
+</html>

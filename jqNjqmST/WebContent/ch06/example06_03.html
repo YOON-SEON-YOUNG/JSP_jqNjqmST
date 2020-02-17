@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 객체</title>
+<style type="text/css">
+img{ 
+   width: 140px; height: 120px;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("img").bind("click", function(e) {
+		console.log($(e.target));	// $(this)
+			
+		// 크기를 2배씩 늘어나게
+// 		var target = $(e.target);
+// 		var w = target.width();
+// 		var h = target.height();
+// 		target.width(w*2),height(h*2);
+
+		
+		var target = $(e.target);
+		target.width(target.width()*2)
+			  .height(target.height()*2);
+	});	
+});
+</script>
+</head>
+<body>   
+   <img src="../images/im17.jpg">
+   <img src="../images/im18.jpg">
+</body>
+</html>
